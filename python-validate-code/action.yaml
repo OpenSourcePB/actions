@@ -12,5 +12,5 @@ runs:
     - id: runing-tests
       name: "Running tests"
       run: |
-        source .venv/bin/activate && pytest --cov=app --cov-report xml:coverage.xml
+        pytest --cov=app --cov-report xml:coverage.xml
       shell: bash
