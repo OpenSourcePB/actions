@@ -5,12 +5,7 @@ runs:
   using: composite
   steps:
     - id: install-requirements
-      name: "Install requirements"
+      name: "Install requirements && Run tests"
       run: |
-        python3 -m venv .venv &&  source .venv/bin/activate && pip install poetry && poetry config virtualenvs.create false && poetry install
-      shell: bash
-    - id: runing-tests
-      name: "Running tests"
-      run: |
-        source .venv/bin/activate && pytest --cov=app --cov-report xml:coverage.xml
+        python3 -m venv .venv &&  source .venv/bin/activate && pip install poetry && poetry config virtualenvs.create false && poetry install && pytest --cov=app --cov-report xml:coverage.xml
       shell: bash
